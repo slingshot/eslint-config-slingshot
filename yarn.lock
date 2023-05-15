@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@types/confusing-browser-globals@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@types/confusing-browser-globals/-/confusing-browser-globals-1.0.0.tgz#d81348816d6005c96b217d006b42b4a3eb12d3b5"
+  integrity sha512-2RQF2SJW3pAQgkHtlIefyxiRkdlBwXxqNiiDDoPyaR9R0SqIujHoP6ceLSAE95EKd7CCLV3F/n4ohOAMi5edpQ==
+
 "@types/eslint@^8.37.0":
   version "8.37.0"
   resolved "https://registry.yarnpkg.com/@types/eslint/-/eslint-8.37.0.tgz#29cebc6c2a3ac7fea7113207bf5a828fdf4d7ef1"
@@ -19,3 +24,8 @@
   version "7.0.11"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.11.tgz#d421b6c527a3037f7c84433fd2c4229e016863d3"
   integrity sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==
+
+confusing-browser-globals@^1.0.11:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/confusing-browser-globals/-/confusing-browser-globals-1.0.11.tgz#ae40e9b57cdd3915408a2805ebd3a5585608dc81"
+  integrity sha512-JsPKdmh8ZkmnHxDk55FZ1TqVLvEQTvoByJZRN9jzI0UjxK/QgAmsphz7PGtqgPieQZ/CQcHWXCR7ATDNhGe+YA==

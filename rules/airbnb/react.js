@@ -1,4 +1,4 @@
-const baseStyleRules = require('eslint-config-airbnb-base/rules/style').rules;
+const baseStyleRules = require('./style').rules;
 
 const dangleRules = baseStyleRules['no-underscore-dangle'];
 
