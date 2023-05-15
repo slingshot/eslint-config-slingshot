@@ -1,6 +1,6 @@
 {
     "name": "@ssh/eslint-config",
-    "version": "0.1.2",
+    "version": "1.0.0",
     "description": "Slingshot's ESLint rules for JS, TS, and React",
     "main": "index.js",
     "scripts": {
