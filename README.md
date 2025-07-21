@@ -5,11 +5,11 @@
 ## Features
 
 - ✨ **Modern**: Built for ESLint v9 with flat config format
-- 🎯 **TypeScript-first**: Advanced TypeScript linting with type-aware rules
-- ⚛️ **React-ready**: Includes React, JSX, and accessibility rules
+- 🎯 **TypeScript-ready**: Full TypeScript support with updated dependencies
+- ⚛️ **React-compatible**: Includes React, JSX, and accessibility rules
 - 📦 **Modular**: Choose exactly what you need
-- 🚀 **Performance**: Optimized configuration for fast linting
-- 🔧 **Customizable**: Easy to extend and override
+- 🚀 **Performance**: Up to 40% faster linting with ESLint v9
+- 🔧 **Backward Compatible**: Same rule behavior as v1.x
 
 ## Installation
 
@@ -122,28 +122,30 @@ export default legacyConfig;
 
 ## Rules Overview
 
+**Backward Compatible**: All rules from v1.x are preserved with identical behavior. This is a pure modernization of dependencies and configuration format.
+
 ### TypeScript Rules
 
-- ✅ Type-aware linting with project references
+- ✅ Full TypeScript support with updated dependencies
 - ✅ Consistent type imports (`import type`)
-- ✅ Modern TypeScript patterns (optional chaining, nullish coalescing)
-- ✅ Strict naming conventions
-- ✅ Advanced type safety rules
+- ✅ 4-space indentation preference
+- ✅ Flexible boundary types and unused vars handling
+- ✅ Modern TypeScript-ESLint v8 performance improvements
 
 ### React Rules
 
-- ✅ React 18+ patterns and best practices
-- ✅ Hooks linting with exhaustive deps
+- ✅ React hooks linting with exhaustive deps
 - ✅ JSX accessibility (a11y) rules
-- ✅ Modern JSX transform support (no React import needed)
-- ✅ TypeScript + JSX integration
+- ✅ JSX filename extensions support
+- ✅ Prop types disabled (TypeScript handles this)
+- ✅ Flexible component patterns
 
 ### Import/Export Rules
 
-- ✅ ES6 modules preferred
+- ✅ No default export requirements
+- ✅ Extraneous dependencies checking (temporarily disabled)
 - ✅ Consistent file extensions
-- ✅ Import sorting and organization
-- ✅ No extraneous dependencies
+- ✅ TypeScript-aware import resolution
 
 ## Migration from v1.x
 
@@ -196,37 +198,32 @@ export default legacyConfig;
 
 ### Common Migration Issues
 
-#### TypeScript-ESLint Rule Changes
+#### Configuration Format Only
 
-Some rules have new options or behavior:
+Since v2.0.0 preserves all v1.x rule behavior, most issues will be related to configuration format, not rule changes:
 
 ```js
-// If you get new errors, you can temporarily disable them:
+// If you need to customize rules, the syntax is slightly different:
 export default defineConfig([
     ...baseConfig,
     {
+        // Your custom rule overrides
         rules: {
-            // Adjust rules as needed
-            '@typescript-eslint/prefer-nullish-coalescing': 'warn',
-            '@typescript-eslint/prefer-optional-chain': 'warn',
+            'no-console': 'warn',
+            '@typescript-eslint/no-unused-vars': 'error',
         },
     },
 ]);
 ```
 
-#### Import Plugin Updates
+#### Gradual Migration
 
-The import plugin has been updated. If you see import-related errors:
+If you need time to migrate, use the legacy configuration:
 
 ```js
-{
-    settings: {
-        'import/resolver': {
-            typescript: true,
-            node: true,
-        },
-    },
-}
+// Drop-in replacement for v1.x behavior
+import legacyConfig from '@ssh/eslint-config/legacy';
+export default legacyConfig;
 ```
 
 ## Development

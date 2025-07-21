@@ -21,14 +21,14 @@ export default defineConfig([
     // Base JavaScript configuration
     js.configs.recommended,
 
-    // TypeScript-specific configuration
+    // TypeScript configuration
     {
         files: ["**/*.{ts,mts,cts}"],
-        extends: [...tseslint.configs.recommendedTypeChecked],
+        extends: [...tseslint.configs.recommended],
         languageOptions: {
             parser: tseslint.parser,
             parserOptions: {
-                ecmaVersion: "latest",
+                ecmaVersion: 2020,
                 sourceType: "module",
                 project: true,
                 tsconfigRootDir: process.cwd(),
@@ -36,7 +36,8 @@ export default defineConfig([
             globals: {
                 ...globals.browser,
                 ...globals.node,
-                ...globals.es2024,
+                ...globals.commonjs,
+                ...globals.es6,
             },
         },
         plugins: {
@@ -55,32 +56,7 @@ export default defineConfig([
             },
         },
         rules: {
-            // Modern TypeScript rules
-            "@typescript-eslint/no-unused-vars": ["warn", { 
-                argsIgnorePattern: "^_",
-                varsIgnorePattern: "^_" 
-            }],
-            "@typescript-eslint/consistent-type-imports": [
-                "error",
-                {
-                    prefer: "type-imports",
-                    disallowTypeAnnotations: false,
-                },
-            ],
-            "@typescript-eslint/no-import-type-side-effects": "error",
-            
-            // Import rules
-            "import/prefer-default-export": "off",
-            "import/extensions": [
-                "error",
-                "ignorePackages",
-                {
-                    js: "never",
-                    ts: "never",
-                },
-            ],
-
-            // Slingshot-specific overrides
+            // Apply Slingshot base rules
             ...slingshotBaseRules.rules,
         },
     },
@@ -93,15 +69,12 @@ export default defineConfig([
             globals: {
                 ...globals.browser,
                 ...globals.node,
-                ...globals.es2024,
+                ...globals.commonjs,
+                ...globals.es6,
             },
         },
         plugins: {
             import: importPlugin,
-        },
-        rules: {
-            // Import rules for JS
-            "import/prefer-default-export": "off",
         },
     },
 ]);

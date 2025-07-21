@@ -10,7 +10,7 @@ export default defineConfig([
     // Extend base configuration
     ...baseConfig,
 
-    // React-specific overrides
+    // React-specific configuration
     {
         files: ["**/*.{jsx,tsx}"],
         languageOptions: {
@@ -31,35 +31,12 @@ export default defineConfig([
             },
         },
         rules: {
-            // React rules
+            // React recommended rules
             ...reactPlugin.configs.recommended.rules,
             ...reactHooksPlugin.configs.recommended.rules,
             ...jsxA11yPlugin.configs.recommended.rules,
 
-            // Modern React patterns
-            "react/react-in-jsx-scope": "off", // Not needed with new JSX transform
-            "react/jsx-filename-extension": [1, { extensions: [".jsx", ".tsx"] }],
-            "react/require-default-props": "off", // TypeScript handles this
-            "react/prop-types": "off", // TypeScript handles this
-            "react/jsx-props-no-spreading": ["warn", { 
-                html: "enforce",
-                custom: "enforce",
-                exceptions: ["Component"] 
-            }],
-
-            // Update import extensions for React
-            "import/extensions": [
-                "error",
-                "ignorePackages",
-                {
-                    js: "never",
-                    jsx: "never",
-                    ts: "never",
-                    tsx: "never",
-                },
-            ],
-
-            // Slingshot-specific React overrides
+            // Apply Slingshot React rules
             ...slingshotReactRules.rules,
         },
     },
