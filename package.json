@@ -1,10 +1,13 @@
 {
     "name": "@ssh/eslint-config",
-    "version": "1.0.0",
+    "version": "2.0.2",
     "description": "Slingshot's ESLint rules for JS, TS, and React",
     "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+    "type": "module",
+    "exports": {
+        ".": "./index.js",
+        "./base": "./base.js",
+        "./legacy": "./legacy.js"
     },
     "repository": {
         "type": "git",
@@ -17,12 +20,12 @@
         "typescript"
     ],
     "peerDependencies": {
-        "@typescript-eslint/eslint-plugin": "^5.13.0",
-        "@typescript-eslint/parser": "^5.0.0",
-        "eslint": "^7.32.0 || ^8.2.0",
-        "eslint-plugin-import": "^2.27.5",
-        "eslint-plugin-jsx-a11y": "^6.7.1",
-        "eslint-plugin-react": "^7.32.2",
+        "@typescript-eslint/eslint-plugin": "^8.0.0",
+        "@typescript-eslint/parser": "^8.0.0",
+        "eslint": "^9.0.0",
+        "eslint-plugin-import": "^2.29.0",
+        "eslint-plugin-jsx-a11y": "^6.8.0",
+        "eslint-plugin-react": "^7.33.0",
         "eslint-plugin-react-hooks": "^4.6.0"
     },
     "author": "Sanil Chawla <sanil@slingshot.fm>",
