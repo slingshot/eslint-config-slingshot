@@ -1,6 +1,6 @@
 {
     "name": "@ssh/eslint-config",
-    "version": "2.0.2",
+    "version": "2.0.0-beta1",
     "description": "Slingshot's ESLint rules for JS, TS, and React",
     "main": "index.js",
     "type": "module",
@@ -20,6 +20,7 @@
         "typescript"
     ],
     "peerDependencies": {
+        "@stylistic/eslint-plugin": "^2.0.0",
         "@typescript-eslint/eslint-plugin": "^8.0.0",
         "@typescript-eslint/parser": "^8.0.0",
         "eslint": "^9.0.0",

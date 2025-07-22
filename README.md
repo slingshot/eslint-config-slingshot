@@ -16,6 +16,7 @@ Install the required peer dependencies:
 # For ESLint 9 (flat config)
 npm install --save-dev \
   eslint@^9.0.0 \
+  @stylistic/eslint-plugin@^2.0.0 \
   @typescript-eslint/eslint-plugin@^8.0.0 \
   @typescript-eslint/parser@^8.0.0 \
   eslint-plugin-import@^2.29.0 \
@@ -80,6 +81,7 @@ module.exports = {
   - TypeScript-specific rules with proper overrides
   - React and React Hooks rules
   - JSX accessibility rules
+  - ESLint Stylistic formatting rules
   - Slingshot custom rules
 - **Use case**: React applications with TypeScript support
 
@@ -88,6 +90,7 @@ module.exports = {
 - **Includes**:
   - Airbnb's JavaScript style guide rules  
   - TypeScript-specific rules
+  - ESLint Stylistic formatting rules
   - Slingshot custom rules
 - **Use case**: Node.js applications, libraries, or non-React projects
 
@@ -95,7 +98,7 @@ module.exports = {
 
 ### Step 1: Update Dependencies
 ```bash
-npm install --save-dev eslint@^9.0.0 @typescript-eslint/eslint-plugin@^8.0.0 @typescript-eslint/parser@^8.0.0
+npm install --save-dev eslint@^9.0.0 @stylistic/eslint-plugin@^2.0.0 @typescript-eslint/eslint-plugin@^8.0.0 @typescript-eslint/parser@^8.0.0
 ```
 
 ### Step 2: Replace Configuration File
@@ -121,10 +124,39 @@ Flat config is automatically detected by ESLint 9. Your existing scripts should 
 ## What's New in v2.0
 
 - **ESLint 9 Support**: Full compatibility with ESLint 9 and flat config system
+- **ESLint Stylistic Integration**: All formatting rules now use [@eslint.style](https://eslint.style/) for future-proof formatting
 - **Updated Dependencies**: All plugins updated to their latest ESLint 9-compatible versions
 - **Better TypeScript Integration**: Improved TypeScript rule handling and performance
 - **Modern Module System**: Now uses ES modules by default
 - **Backward Compatibility**: Legacy export available for ESLint 8 users
+
+## ESLint Stylistic Integration
+
+This configuration uses **[ESLint Stylistic](https://eslint.style/)** for all formatting rules. This provides:
+
+✅ **Future-proof formatting** - ESLint 9 removed many built-in formatting rules  
+✅ **Consistent styling** - All formatting rules in one place  
+✅ **TypeScript-aware** - Proper handling of TypeScript syntax  
+✅ **JSX support** - React/JSX formatting included  
+
+### Stylistic Rules Included
+
+The configuration includes comprehensive formatting rules:
+
+```javascript
+// Spacing and indentation
+"@stylistic/indent": ["error", 4]              // 4-space indentation (Slingshot override)
+"@stylistic/quotes": ["error", "single"]       // Single quotes
+"@stylistic/semi": ["error", "always"]         // Always semicolons
+
+// Object and array formatting  
+"@stylistic/object-curly-spacing": ["error", "always"]
+"@stylistic/comma-dangle": ["error", "always-multiline"]
+
+// JSX formatting (React files)
+"@stylistic/jsx-indent": ["error", 4]
+"@stylistic/jsx-indent-props": ["error", 4]
+```
 
 ## Rule Customizations
 
@@ -133,8 +165,8 @@ Flat config is automatically detected by ESLint 9. Your existing scripts should 
 This config includes several customizations from the standard Airbnb config:
 
 ```javascript
-// Indentation set to 4 spaces
-"@typescript-eslint/indent": ["error", 4]
+// Indentation set to 4 spaces (via @stylistic)
+"@stylistic/indent": ["error", 4]
 
 // Import/export preferences
 "import/prefer-default-export": "off"
@@ -151,6 +183,7 @@ This config includes several customizations from the standard Airbnb config:
 The configuration automatically:
 - Disables JavaScript rules that conflict with TypeScript
 - Enables TypeScript-aware versions of ESLint rules
+- Uses @stylistic equivalents for TypeScript formatting rules
 - Configures import resolution for `.ts` and `.tsx` files
 - Sets up proper parsing for TypeScript files
 

@@ -4,6 +4,7 @@ import tsParser from '@typescript-eslint/parser';
 import reactPlugin from 'eslint-plugin-react';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
+import stylisticPlugin from '@stylistic/eslint-plugin';
 import { rules as tsBaseRules, settings as tsSettings } from './rules/ts/lib/shared.js';
 import { rules as tsReactRules, settings as tsReactSettings } from './rules/ts/react.js';
 import { rules as slingshotReactRules } from './rules/slingshot/react.js';
@@ -25,6 +26,7 @@ const config = [
             'react': reactPlugin,
             'react-hooks': reactHooksPlugin,
             'jsx-a11y': jsxA11yPlugin,
+            '@stylistic': stylisticPlugin,
         },
         rules: {
             ...reactPlugin.configs.recommended.rules,
@@ -53,6 +55,7 @@ const config = [
             'react': reactPlugin,
             'react-hooks': reactHooksPlugin,
             'jsx-a11y': jsxA11yPlugin,
+            '@stylistic': stylisticPlugin,
         },
         rules: {
             // TypeScript rules

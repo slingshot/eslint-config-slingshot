@@ -1,9 +1,11 @@
 import globals from 'globals';
 import js from '@eslint/js';
 import importPlugin from 'eslint-plugin-import';
+import stylisticPlugin from '@stylistic/eslint-plugin';
 import { rules as slingshotBaseRules } from './rules/slingshot/base.js';
 import { rules as airbnbBestPracticesRules } from './rules/airbnb/best-practices.js';
 import { rules as airbnbErrorsRules } from './rules/airbnb/errors.js';
+import { rules as airbnbStyleRules } from './rules/airbnb/style.js';
 
 // Base flat config for JavaScript/TypeScript projects
 const base = [
@@ -24,12 +26,14 @@ const base = [
 
         plugins: {
             'import': importPlugin,
+            '@stylistic': stylisticPlugin,
         },
 
         rules: {
             // Merge base rules from different sources
             ...airbnbBestPracticesRules,
             ...airbnbErrorsRules,
+            ...airbnbStyleRules,
             ...slingshotBaseRules,
         },
 
