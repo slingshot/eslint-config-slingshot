@@ -279,7 +279,7 @@ export const rules = {
 
     // require or disallow the Unicode Byte Order Mark
     // https://eslint.style/rules/default/unicode-bom
-    '@stylistic/unicode-bom': ['error', 'never'],
+    'unicode-bom': ['error', 'never'],
 
     // require regex literals to be wrapped in parentheses
     'wrap-regex': 'off'

@@ -111,7 +111,7 @@ export const rules = {
     // Replace Airbnb 'indent' rule with '@stylistic' version
     // https://eslint.style/rules/ts/indent
     indent: 'off',
-    '@stylistic/indent': ['error', 2, {
+    '@stylistic/indent': ['error', 4, {
         SwitchCase: 1,
         VariableDeclarator: 1,
         outerIIFEBody: 1,
@@ -223,9 +223,9 @@ export const rules = {
     '@stylistic/space-before-blocks': 'error',
 
     // Replace Airbnb 'no-throw-literal' rule with '@typescript-eslint' version
-    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-throw-literal.md
+    // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/only-throw-error.md
     'no-throw-literal': 'off',
-    '@typescript-eslint/no-throw-literal': 'error',
+    '@typescript-eslint/only-throw-error': 'error',
 
     // Replace Airbnb 'no-unused-expressions' rule with '@typescript-eslint' version
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unused-expressions.md
@@ -289,6 +289,9 @@ export const rules = {
     // https://eslint.style/rules/ts/object-curly-spacing
     'object-curly-spacing': 'off',
     '@stylistic/object-curly-spacing': ['error', 'always'],
+
+    // Slingshot TypeScript-specific rule
+    '@typescript-eslint/consistent-type-imports': 'error',
 
     // Append 'ts' and 'tsx' to Airbnb 'import/extensions' rule
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md

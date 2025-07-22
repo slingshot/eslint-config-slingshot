@@ -34,6 +34,7 @@ const base = [
             ...airbnbBestPracticesRules,
             ...airbnbErrorsRules,
             ...airbnbStyleRules,
+            
             ...slingshotBaseRules,
         },
 

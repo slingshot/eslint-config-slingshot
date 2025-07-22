@@ -18,8 +18,10 @@ const config = [
     {
         files: ['**/*.{js,jsx,mjs,cjs}'],
         languageOptions: {
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             }
         },
         plugins: {
@@ -32,6 +34,7 @@ const config = [
             ...reactPlugin.configs.recommended.rules,
             ...reactHooksPlugin.configs.recommended.rules,
             ...jsxA11yPlugin.configs.recommended.rules,
+            
             ...slingshotReactRules,
         },
         settings: {
@@ -46,8 +49,10 @@ const config = [
         files: ['**/*.{ts,tsx,cts,mts}'],
         languageOptions: {
             parser: tsParser,
-            ecmaFeatures: {
-                jsx: true
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true
+                }
             }
         },
         plugins: {
@@ -61,12 +66,13 @@ const config = [
             // TypeScript rules
             ...tsBaseRules,
             ...tsReactRules,
-            ...slingshotReactRules,
 
             // React rules for TypeScript files
             ...reactPlugin.configs.recommended.rules,
             ...reactHooksPlugin.configs.recommended.rules,
             ...jsxA11yPlugin.configs.recommended.rules,
+
+            ...slingshotReactRules,
         },
         settings: {
             ...tsSettings,

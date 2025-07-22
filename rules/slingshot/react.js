@@ -1,3 +1,5 @@
+import { rules as baseStyleRules } from './base.js';
+
 export const rules = {
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx", ".tsx"] }],
@@ -12,6 +14,7 @@ export const rules = {
     "react/jsx-no-useless-fragment": "off",
     "react/jsx-props-no-spreading": "warn",
     "react/jsx-key": "error",
+    ...baseStyleRules,
 };
 
 // Default export for backward compatibility  
