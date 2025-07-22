@@ -1,14 +1,14 @@
 module.exports = {
     env: {
-        es6: true,
+        es6: true
     },
     parserOptions: {
         ecmaVersion: 6,
         sourceType: 'module',
         ecmaFeatures: {
             generators: false,
-            objectLiteralDuplicateProperties: false,
-        },
+            objectLiteralDuplicateProperties: false
+        }
     },
 
     rules: {
@@ -53,7 +53,7 @@ module.exports = {
 
         // disallow importing from the same path more than once
         // https://eslint.org/docs/rules/no-duplicate-imports
-        // replaced by https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-duplicates.md
+        // replaced by https://github.com/import-js/eslint-plugin-import/blob/master/docs/rules/no-duplicates.md
         'no-duplicate-imports': 'off',
 
         // disallow symbol constructor
@@ -65,8 +65,7 @@ module.exports = {
         'no-restricted-exports': ['error', {
             restrictedNamedExports: [
                 'default', // use `export default` to provide a default export
-                'then', // this will cause tons of confusion when your module is dynamically `import()`ed, and will
-                        // break in most node ESM versions
+                'then', // this will cause tons of confusion when your module is dynamically `import()`ed, and will break in most node ESM versions
             ],
         }],
 
@@ -74,7 +73,7 @@ module.exports = {
         // https://eslint.org/docs/rules/no-restricted-imports
         'no-restricted-imports': ['off', {
             paths: [],
-            patterns: [],
+            patterns: []
         }],
 
         // disallow to use this/super before super() calling in constructors.
@@ -131,8 +130,8 @@ module.exports = {
                 object: false,
             },
         }, {
-            enforceForRenamedProperties: false,
-        }],
+                enforceForRenamedProperties: false,
+            }],
 
         // disallow parseInt() in favor of binary, octal, and hexadecimal literals
         // https://eslint.org/docs/rules/prefer-numeric-literals
@@ -181,6 +180,6 @@ module.exports = {
 
         // enforce spacing around the * in yield* expressions
         // https://eslint.org/docs/rules/yield-star-spacing
-        'yield-star-spacing': ['error', 'after'],
-    },
+        'yield-star-spacing': ['error', 'after']
+    }
 };

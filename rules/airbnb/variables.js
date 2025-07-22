@@ -28,7 +28,10 @@ module.exports = {
                 message:
                     'Use Number.isNaN instead https://github.com/airbnb/javascript#standard-library--isnan',
             },
-        ].concat(confusingBrowserGlobals),
+        ].concat(confusingBrowserGlobals.map((g) => ({
+            name: g,
+            message: `Use window.${g} instead. https://github.com/facebook/create-react-app/blob/HEAD/packages/confusing-browser-globals/README.md`,
+        }))),
 
         // disallow declaration of variables already declared in the outer scope
         'no-shadow': 'error',
@@ -52,5 +55,5 @@ module.exports = {
 
         // disallow use of variables before they are defined
         'no-use-before-define': ['error', { functions: true, classes: true, variables: true }],
-    },
+    }
 };

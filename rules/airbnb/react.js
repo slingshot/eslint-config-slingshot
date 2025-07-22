@@ -1,4 +1,4 @@
-const baseStyleRules = require('./style').rules;
+const baseStyleRules = require('eslint-config-airbnb-base/rules/style').rules;
 
 const dangleRules = baseStyleRules['no-underscore-dangle'];
 
@@ -42,8 +42,15 @@ module.exports = {
                 'componentDidUpdate',
                 'componentWillUnmount',
                 'componentDidCatch',
-                'getSnapshotBeforeUpdate',
+                'getSnapshotBeforeUpdate'
             ],
+        }],
+
+        // This rule enforces onChange or readonly attribute for checked property of input elements.
+        // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/checked-requires-onchange-or-readonly.md
+        'react/checked-requires-onchange-or-readonly': ['off', {
+            ignoreMissingProperties: false,
+            ignoreExclusiveCheckedAttribute: false
         }],
 
         // Prevent missing displayName in a React component definition
@@ -222,7 +229,7 @@ module.exports = {
         'react/prop-types': ['error', {
             ignore: [],
             customValidators: [],
-            skipUndeclared: false,
+            skipUndeclared: false
         }],
 
         // Prevent missing React when using JSX
@@ -280,11 +287,11 @@ module.exports = {
                     'getSnapshotBeforeUpdate',
                     'componentDidUpdate',
                     'componentDidCatch',
-                    'componentWillUnmount',
+                    'componentWillUnmount'
                 ],
                 rendering: [
                     '/^render.+$/',
-                    'render',
+                    'render'
                 ],
             },
         }],
@@ -343,7 +350,7 @@ module.exports = {
 
         // Forbid certain elements
         // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/forbid-elements.md
-        'react/forbid-elements': ['off', { forbid: [] }],
+        'react/forbid-elements': ['off', { forbid: [], }],
 
         // Prevent problem with children and props.dangerouslySetInnerHTML
         // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-danger-with-children.md
@@ -352,7 +359,8 @@ module.exports = {
         // Prevent unused propType definitions
         // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-unused-prop-types.md
         'react/no-unused-prop-types': ['error', {
-            customValidators: [],
+            customValidators: [
+            ],
             skipShapeProps: true,
         }],
 
@@ -576,23 +584,29 @@ module.exports = {
         'react/jsx-no-leaked-render': 'off',
 
         // https://github.com/jsx-eslint/eslint-plugin-react/blob/66b58dd4864678eb869a7bf434c72ff7ac530eb1/docs/rules/no-object-type-as-default-prop.md
-        // https://github.com/jsx-eslint/eslint-plugin-react/blob/66b58dd4864678eb869a7bf434c72ff7ac530eb1/docs/rules/no-object-type-as-default-prop.md
         // TODO: semver-major, enable
         'react/no-object-type-as-default-prop': 'off',
 
         // https://github.com/jsx-eslint/eslint-plugin-react/blob/66b58dd4864678eb869a7bf434c72ff7ac530eb1/docs/rules/sort-default-props.md
-        // https://github.com/jsx-eslint/eslint-plugin-react/blob/66b58dd4864678eb869a7bf434c72ff7ac530eb1/docs/rules/sort-default-props.md
         // TODO: semver-major, enable?
         'react/sort-default-props': ['off', {
-            ignoreCase: false,
+            ignoreCase: false
         }],
+
+        // https://github.com/jsx-eslint/eslint-plugin-react/blob/9668ee0762acd5c23f53cd3a372e2d8d9563944d/docs/rules/forward-ref-uses-ref.md
+        // TODO: semver-major, enable
+        'react/forward-ref-uses-ref': 'off',
+
+        // https://github.com/jsx-eslint/eslint-plugin-react/blob/9668ee0762acd5c23f53cd3a372e2d8d9563944d/docs/rules/jsx-props-no-spread-multi.md
+        // TODO: semver-major, enable
+        'react/jsx-props-no-spread-multi': 'off',
     },
 
     settings: {
         'import/resolver': {
             node: {
-                extensions: ['.js', '.jsx', '.json'],
-            },
+                extensions: ['.js', '.jsx', '.json']
+            }
         },
         react: {
             pragma: 'React',
@@ -603,5 +617,5 @@ module.exports = {
             'exact', // https://www.npmjs.com/package/prop-types-exact
             'Object.freeze', // https://tc39.github.io/ecma262/#sec-object.freeze
         ],
-    },
+    }
 };

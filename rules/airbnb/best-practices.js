@@ -97,7 +97,7 @@ module.exports = {
                 'arrowFunctions',
                 'functions',
                 'methods',
-            ],
+            ]
         }],
 
         // disallow empty destructuring patterns
@@ -217,6 +217,11 @@ module.exports = {
         // https://eslint.org/docs/rules/no-nonoctal-decimal-escape
         'no-nonoctal-decimal-escape': 'error',
 
+        // Disallow calls to the Object constructor without an argument
+        // https://eslint.org/docs/latest/rules/no-object-constructor
+        // TODO: enable, semver-major
+        'no-object-constructor': 'off',
+
         // disallow use of (old style) octal literals
         // https://eslint.org/docs/rules/no-octal
         'no-octal': 'error',
@@ -243,7 +248,7 @@ module.exports = {
                 'response', // for Express responses
                 '$scope', // for Angular 1 scopes
                 'staticContext', // for ReactRouter context
-            ],
+            ]
         }],
 
         // disallow usage of __proto__ property
@@ -261,40 +266,40 @@ module.exports = {
             property: 'callee',
             message: 'arguments.callee is deprecated',
         }, {
-            object: 'global',
-            property: 'isFinite',
-            message: 'Please use Number.isFinite instead',
-        }, {
-            object: 'self',
-            property: 'isFinite',
-            message: 'Please use Number.isFinite instead',
-        }, {
-            object: 'window',
-            property: 'isFinite',
-            message: 'Please use Number.isFinite instead',
-        }, {
-            object: 'global',
-            property: 'isNaN',
-            message: 'Please use Number.isNaN instead',
-        }, {
-            object: 'self',
-            property: 'isNaN',
-            message: 'Please use Number.isNaN instead',
-        }, {
-            object: 'window',
-            property: 'isNaN',
-            message: 'Please use Number.isNaN instead',
-        }, {
-            property: '__defineGetter__',
-            message: 'Please use Object.defineProperty instead.',
-        }, {
-            property: '__defineSetter__',
-            message: 'Please use Object.defineProperty instead.',
-        }, {
-            object: 'Math',
-            property: 'pow',
-            message: 'Use the exponentiation operator (**) instead.',
-        }],
+                object: 'global',
+                property: 'isFinite',
+                message: 'Please use Number.isFinite instead',
+            }, {
+                object: 'self',
+                property: 'isFinite',
+                message: 'Please use Number.isFinite instead',
+            }, {
+                object: 'window',
+                property: 'isFinite',
+                message: 'Please use Number.isFinite instead',
+            }, {
+                object: 'global',
+                property: 'isNaN',
+                message: 'Please use Number.isNaN instead',
+            }, {
+                object: 'self',
+                property: 'isNaN',
+                message: 'Please use Number.isNaN instead',
+            }, {
+                object: 'window',
+                property: 'isNaN',
+                message: 'Please use Number.isNaN instead',
+            }, {
+                property: '__defineGetter__',
+                message: 'Please use Object.defineProperty instead.',
+            }, {
+                property: '__defineSetter__',
+                message: 'Please use Object.defineProperty instead.',
+            }, {
+                object: 'Math',
+                property: 'pow',
+                message: 'Use the exponentiation operator (**) instead.',
+            }],
 
         // disallow use of assignment in return statement
         // https://eslint.org/docs/rules/no-return-assign
@@ -414,6 +419,6 @@ module.exports = {
 
         // require or disallow Yoda conditions
         // https://eslint.org/docs/rules/yoda
-        yoda: 'error',
-    },
+        yoda: 'error'
+    }
 };
