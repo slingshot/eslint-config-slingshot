@@ -17,5 +17,5 @@ export const rules = {
     ...baseStyleRules,
 };
 
-// Default export for backward compatibility  
+// Default export for backward compatibility
 export default { rules };
