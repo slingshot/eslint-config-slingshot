@@ -33,7 +33,7 @@
     "license": "Apache-2.0",
     "devDependencies": {
         "@types/confusing-browser-globals": "^1.0.0",
-        "@types/eslint": "^8.37.0"
+        "@types/eslint": "^9.6.1"
     },
     "dependencies": {
         "confusing-browser-globals": "^1.0.11"
