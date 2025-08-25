@@ -81,7 +81,7 @@ export const rules = {
 
     // this option sets a specific tab width for your code
     // https://eslint.style/rules/default/indent
-    '@stylistic/indent': ['error', 2, {
+    '@stylistic/indent': ['error', 4, {
         SwitchCase: 1,
         VariableDeclarator: 1,
         outerIIFEBody: 1,

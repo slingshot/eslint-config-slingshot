@@ -10,7 +10,20 @@ npm install --save-dev @ssh/eslint-config
 
 ### Peer Dependencies
 
-Install the required peer dependencies:
+You need to install all peer dependencies for this package to work. Choose your installation method based on your project needs:
+
+#### For Base Configuration (JavaScript/TypeScript Only)
+
+```bash
+npm install --save-dev \
+  eslint@^9.0.0 \
+  @stylistic/eslint-plugin@^2.0.0 \
+  @typescript-eslint/eslint-plugin@^8.0.0 \
+  @typescript-eslint/parser@^8.0.0 \
+  eslint-plugin-import@^2.29.0
+```
+
+#### For React Configuration (Includes Base + React)
 
 ```bash
 npm install --save-dev \
@@ -21,8 +34,19 @@ npm install --save-dev \
   eslint-plugin-import@^2.29.0 \
   eslint-plugin-jsx-a11y@^6.8.0 \
   eslint-plugin-react@^7.33.0 \
-  eslint-plugin-react-hooks@^4.6.0
+  eslint-plugin-react-hooks@^5.0.0
 ```
+
+**Note**: If you only need base JavaScript/TypeScript linting, you can skip the React plugins. If you use the React configuration, all dependencies are required.
+
+## Available Configurations
+
+This package provides three different configurations:
+
+- **`@ssh/eslint-config`** (default): Base configuration for JavaScript/TypeScript projects
+- **`@ssh/eslint-config/react`**: Full configuration with React + TypeScript support
+- **`@ssh/eslint-config/base`**: Alias for the default base configuration
+- **`@ssh/eslint-config/legacy`**: ESLint 8 compatibility (deprecated)
 
 ## Usage
 
@@ -30,19 +54,43 @@ npm install --save-dev \
 
 Create an `eslint.config.js` file in your project root:
 
-#### Full Configuration (React + TypeScript)
+#### Base Configuration (JavaScript/TypeScript Only) - Default
 ```javascript
 import config from '@ssh/eslint-config';
 
 export default config;
 ```
 
-#### Base Configuration (No React)
-```javascript
-import base from '@ssh/eslint-config/base';
+**Note**: This uses the base configuration and only requires the base dependencies (no React plugins needed).
 
-export default base;
+#### React Configuration (React + TypeScript)
+```javascript
+import reactConfig from '@ssh/eslint-config/react';
+
+export default reactConfig;
 ```
+
+**Note**: This configuration requires ALL peer dependencies including the React plugins listed above.
+
+#### Next.js Projects
+
+For Next.js projects, combine with Next.js's official ESLint config:
+
+```bash
+npm install --save-dev @next/eslint-config-next
+```
+
+```javascript
+import reactConfig from '@ssh/eslint-config/react';
+import nextConfig from '@next/eslint-config-next';
+
+export default [
+  ...reactConfig,
+  ...nextConfig
+];
+```
+
+**Note**: Next.js config should come after the Slingshot config to ensure Next.js-specific rules take precedence.
 
 #### Custom Configuration
 ```javascript
@@ -74,9 +122,8 @@ module.exports = {
 ## Migration from ESLint 8
 
 ### Step 1: Update Dependencies
-```bash
-npm install --save-dev eslint@^9.0.0 @stylistic/eslint-plugin@^2.0.0 @typescript-eslint/eslint-plugin@^8.0.0 @typescript-eslint/parser@^8.0.0
-```
+
+Install the required peer dependencies based on your project type. See the [Peer Dependencies](#peer-dependencies) section above for the exact commands.
 
 ### Step 2: Replace Configuration File
 Replace your `.eslintrc.*` file with `eslint.config.js`:
@@ -89,10 +136,19 @@ module.exports = {
 ```
 
 **After (eslint.config.js):**
+
+For base JavaScript/TypeScript projects:
 ```javascript
 import config from '@ssh/eslint-config';
 
 export default config;
+```
+
+For React projects:
+```javascript
+import reactConfig from '@ssh/eslint-config/react';
+
+export default reactConfig;
 ```
 
 ### Step 3: Update Scripts
