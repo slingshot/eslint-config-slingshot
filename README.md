@@ -5,7 +5,7 @@ Slingshot's ESLint configuration for JavaScript, TypeScript, and React projects.
 ## Installation
 
 ```bash
-npm install --save-dev @ssh/eslint-config
+pnpm add -D @ssh/eslint-config
 ```
 
 ### Peer Dependencies
@@ -15,26 +15,26 @@ You need to install all peer dependencies for this package to work. Choose your 
 #### For Base Configuration (JavaScript/TypeScript Only)
 
 ```bash
-npm install --save-dev \
-  eslint@^9.0.0 \
-  @stylistic/eslint-plugin@^2.0.0 \
-  @typescript-eslint/eslint-plugin@^8.0.0 \
-  @typescript-eslint/parser@^8.0.0 \
+pnpm add -D \
+  eslint@^9.34.0 \
+  @stylistic/eslint-plugin@^5.2.0 \
+  @typescript-eslint/eslint-plugin@^8.41.0 \
+  @typescript-eslint/parser@^8.41.0 \
   eslint-plugin-import@^2.29.0
 ```
 
 #### For React Configuration (Includes Base + React)
 
 ```bash
-npm install --save-dev \
-  eslint@^9.0.0 \
-  @stylistic/eslint-plugin@^2.0.0 \
-  @typescript-eslint/eslint-plugin@^8.0.0 \
-  @typescript-eslint/parser@^8.0.0 \
+pnpm add -D \
+  eslint@^9.34.0 \
+  @stylistic/eslint-plugin@^5.2.0 \
+  @typescript-eslint/eslint-plugin@^8.41.0 \
+  @typescript-eslint/parser@^8.41.0 \
   eslint-plugin-import@^2.29.0 \
-  eslint-plugin-jsx-a11y@^6.8.0 \
-  eslint-plugin-react@^7.33.0 \
-  eslint-plugin-react-hooks@^5.0.0
+  eslint-plugin-jsx-a11y@^6.10.0 \
+  eslint-plugin-react@^7.37.0 \
+  eslint-plugin-react-hooks@^5.2.0
 ```
 
 **Note**: If you only need base JavaScript/TypeScript linting, you can skip the React plugins. If you use the React configuration, all dependencies are required.
@@ -77,7 +77,7 @@ export default reactConfig;
 For Next.js projects, combine with Next.js's official ESLint config:
 
 ```bash
-npm install --save-dev @next/eslint-config-next
+pnpm add -D @next/eslint-config-next
 ```
 
 ```javascript
