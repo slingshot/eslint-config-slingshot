@@ -8,7 +8,7 @@
         ".": "./base.js",
         "./base": "./base.js",
         "./react": "./index.js",
-        "./legacy": "./legacy.js"
+        "./legacy": "./legacy.cjs"
     },
     "repository": {
         "type": "git",
