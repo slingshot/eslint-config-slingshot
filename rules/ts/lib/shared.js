@@ -104,9 +104,9 @@ export const rules = {
     '@typescript-eslint/dot-notation': baseBestPracticesRules['dot-notation'],
 
     // Replace Airbnb 'func-call-spacing' rule with '@stylistic' version
-    // https://eslint.style/rules/ts/func-call-spacing
+    // https://eslint.style/rules/ts/function-call-spacing
     'func-call-spacing': 'off',
-    '@stylistic/func-call-spacing': ['error', 'never'],
+    '@stylistic/function-call-spacing': ['error', 'never'],
 
     // Replace Airbnb 'indent' rule with '@stylistic' version
     // https://eslint.style/rules/ts/indent

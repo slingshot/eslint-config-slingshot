@@ -10,7 +10,7 @@
 module.exports = {
     parser: '@typescript-eslint/parser',
     extends: [
-        './base.js',
+        './legacy-base.cjs',
         './rules/airbnb/react-a11y',
         './rules/airbnb/react-hooks',
         './rules/airbnb/react',

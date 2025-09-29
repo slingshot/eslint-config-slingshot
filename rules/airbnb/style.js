@@ -68,8 +68,8 @@ export const rules = {
     '@stylistic/eol-last': ['error', 'always'],
 
     // enforce spacing between functions and their invocations
-    // https://eslint.style/rules/default/func-call-spacing
-    '@stylistic/func-call-spacing': ['error', 'never'],
+    // https://eslint.style/rules/default/function-call-spacing
+    '@stylistic/function-call-spacing': ['error', 'never'],
 
     // enforce consistent line breaks inside function parentheses
     // https://eslint.style/rules/default/function-paren-newline
