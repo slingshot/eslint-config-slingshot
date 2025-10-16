@@ -1,7 +1,7 @@
-import globals from 'globals';
 import js from '@eslint/js';
 import importPlugin from 'eslint-plugin-import';
 import stylisticPlugin from '@stylistic/eslint-plugin';
+
 import { rules as slingshotBaseRules } from './rules/slingshot/base.js';
 import { rules as airbnbBestPracticesRules } from './rules/airbnb/best-practices.js';
 import { rules as airbnbErrorsRules } from './rules/airbnb/errors.js';
@@ -16,14 +16,10 @@ const base = [
 
     // Base JavaScript configuration
     {
+        name: 'ssh_base_config',
         languageOptions: {
             ecmaVersion: 'latest',
             sourceType: 'module',
-            globals: {
-                ...globals.browser,
-                ...globals.node,
-                ...globals.es2021,
-            }
         },
 
         plugins: {
@@ -40,12 +36,23 @@ const base = [
             ...airbnbImportsRules,
             
             ...slingshotBaseRules,
+
+            'import/extensions': ['error', 'ignorePackages', {
+                js: 'never',
+                jsx: 'never',
+                ts: 'never',
+                tsx: 'never',
+            }],
         },
 
         settings: {
+            'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
+            'import/parsers': {
+                '@typescript-eslint/parser': ['.ts', '.tsx']
+            },
             'import/resolver': {
                 node: {
-                    extensions: ['.js', '.jsx', '.json'],
+                    extensions: ['.js', '.jsx', '.ts', '.tsx'],
                 },
             },
         },

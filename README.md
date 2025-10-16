@@ -12,29 +12,32 @@ pnpm add -D @ssh/eslint-config
 
 You need to install all peer dependencies for this package to work. Choose your installation method based on your project needs:
 
-#### For Base Configuration (JavaScript/TypeScript Only)
+#### For Base Configuration (JavaScript Only)
 
 ```bash
 pnpm add -D \
   eslint@^9.34.0 \
   @stylistic/eslint-plugin@^5.2.0 \
-  @typescript-eslint/eslint-plugin@^8.41.0 \
-  @typescript-eslint/parser@^8.41.0 \
   eslint-plugin-import@^2.29.0
 ```
 
-#### For React Configuration (Includes Base + React)
+#### For Typescript Configuration
 
 ```bash
 pnpm add -D \
-  eslint@^9.34.0 \
-  @stylistic/eslint-plugin@^5.2.0 \
+  eslint-plugin-import@^2.29.0 \
   @typescript-eslint/eslint-plugin@^8.41.0 \
-  @typescript-eslint/parser@^8.41.0 \
+  @typescript-eslint/parser@^8.41.0
+```
+
+#### For React Configuration
+
+```bash
+pnpm add -D \
   eslint-plugin-import@^2.29.0 \
   eslint-plugin-jsx-a11y@^6.10.0 \
   eslint-plugin-react@^7.37.0 \
-  eslint-plugin-react-hooks@^5.2.0
+  eslint-plugin-react-hooks@^7.0.0
 ```
 
 **Note**: If you only need base JavaScript/TypeScript linting, you can skip the React plugins. If you use the React configuration, all dependencies are required.
@@ -44,13 +47,14 @@ pnpm add -D \
 This package provides three different configurations:
 
 - **`@ssh/eslint-config`** (default): Base configuration for JavaScript/TypeScript projects
-- **`@ssh/eslint-config/react`**: Full configuration with React + TypeScript support
+- **`@ssh/eslint-config/typescript`**: Full configuration for Typescript
+- **`@ssh/eslint-config/react`**: Full configuration for React
 - **`@ssh/eslint-config/base`**: Alias for the default base configuration
 - **`@ssh/eslint-config/legacy`**: ESLint 8 compatibility (deprecated)
 
 ## Usage
 
-### ESLint 9 (Flat Config) - Recommended
+### ESLint 9 Flat Config
 
 Create an `eslint.config.js` file in your project root:
 
@@ -61,13 +65,18 @@ import config from '@ssh/eslint-config';
 export default config;
 ```
 
-**Note**: This uses the base configuration and only requires the base dependencies (no React plugins needed).
 
-#### React Configuration (React + TypeScript)
+#### React + Typescript Configuration
 ```javascript
 import reactConfig from '@ssh/eslint-config/react';
+import typescriptConfig from '@ssh/eslint-config/typescript';
+import baseConfig from '@ssh/eslint-config/base';
 
-export default reactConfig;
+export default [
+  ...reactConfig,
+  ...baseConfig,
+  ...typescriptConfig,
+];
 ```
 
 **Note**: This configuration requires ALL peer dependencies including the React plugins listed above.
@@ -82,15 +91,17 @@ pnpm add -D @next/eslint-config-next
 
 ```javascript
 import reactConfig from '@ssh/eslint-config/react';
+import typescriptConfig from '@ssh/eslint-config/typescript';
+import baseConfig from '@ssh/eslint-config/base';
 import nextConfig from '@next/eslint-config-next';
 
 export default [
+  ...nextConfig,
   ...reactConfig,
-  ...nextConfig
+  ...baseConfig,
+  ...typescriptConfig,
 ];
 ```
-
-**Note**: Next.js config should come after the Slingshot config to ensure Next.js-specific rules take precedence.
 
 #### Custom Configuration
 ```javascript

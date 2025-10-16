@@ -2,12 +2,12 @@
     "name": "@ssh/eslint-config",
     "version": "2.0.0",
     "description": "Slingshot's ESLint configuration for JavaScript, TypeScript, and React projects with ESLint 9 flat config support",
-    "main": "base.js",
     "type": "module",
     "exports": {
         ".": "./base.js",
         "./base": "./base.js",
-        "./react": "./index.js",
+        "./react": "./react.js",
+        "./typescript": "./typescript.js",
         "./legacy": "./legacy.cjs"
     },
     "repository": {
@@ -32,13 +32,14 @@
         "eslint-plugin-import": "^2.29.0",
         "eslint-plugin-jsx-a11y": "^6.10.0",
         "eslint-plugin-react": "^7.37.0",
-        "eslint-plugin-react-hooks": "^5.2.0"
+        "eslint-plugin-react-hooks": "^7.0.0"
     },
     "author": "Sanil Chawla <sanil@slingshot.fm>",
     "license": "Apache-2.0",
     "devDependencies": {
-        "@types/confusing-browser-globals": "^1.0.0",
-        "@types/eslint": "^9.6.1"
+        "@types/confusing-browser-globals": "^1.0.3",
+        "@types/eslint": "^9.6.1",
+        "eslint-plugin-react-hooks": "^7.0.0"
     },
     "dependencies": {
         "confusing-browser-globals": "^1.0.11"

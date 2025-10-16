@@ -343,7 +343,8 @@ export const rules = {
 
 export const overrides = [
     {
-        files: ['*.ts', '*.tsx'],
+        name: 'ssh_typescript_overrides',
+        files: ['**/*.ts', '**/*.tsx'],
         rules: {
             // The following rules are enabled in Airbnb config, but are already checked (more thoroughly) by the
             // TypeScript compiler Some of the rules also fail in TypeScript files, for example:
