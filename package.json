@@ -7,8 +7,7 @@
         ".": "./base.js",
         "./base": "./base.js",
         "./react": "./react.js",
-        "./typescript": "./typescript.js",
-        "./legacy": "./legacy.cjs"
+        "./typescript": "./typescript.js"
     },
     "repository": {
         "type": "git",

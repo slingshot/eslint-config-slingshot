@@ -130,41 +130,6 @@ module.exports = {
 };
 ```
 
-## Migration from ESLint 8
-
-### Step 1: Update Dependencies
-
-Install the required peer dependencies based on your project type. See the [Peer Dependencies](#peer-dependencies) section above for the exact commands.
-
-### Step 2: Replace Configuration File
-Replace your `.eslintrc.*` file with `eslint.config.js`:
-
-**Before (.eslintrc.js):**
-```javascript
-module.exports = {
-  extends: ['@ssh'],
-};
-```
-
-**After (eslint.config.js):**
-
-For base JavaScript/TypeScript projects:
-```javascript
-import config from '@ssh/eslint-config';
-
-export default config;
-```
-
-For React projects:
-```javascript
-import reactConfig from '@ssh/eslint-config/react';
-
-export default reactConfig;
-```
-
-### Step 3: Update Scripts
-Flat config is automatically detected by ESLint 9. Your existing scripts should work without changes.
-
 ## License
 
 Apache-2.0 - See [LICENSE](LICENSE) file for details.
