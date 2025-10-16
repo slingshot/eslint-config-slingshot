@@ -2,6 +2,14 @@
 
 Slingshot's ESLint configuration for JavaScript, TypeScript, and React projects.
 
+## Requirements
+
+- **Node.js**: 12.20.0 or higher (ESM support required)
+- **ESLint**: 9.34.0 or higher
+- **Package Format**: This package uses ESM (ECMAScript Modules)
+
+**Note**: Version 2.x requires ESM. If you need CommonJS support, use version 1.x.
+
 ## Installation
 
 ```bash
@@ -40,17 +48,14 @@ pnpm add -D \
   eslint-plugin-react-hooks@^7.0.0
 ```
 
-**Note**: If you only need base JavaScript/TypeScript linting, you can skip the React plugins. If you use the React configuration, all dependencies are required.
-
 ## Available Configurations
 
 This package provides three different configurations:
 
-- **`@ssh/eslint-config`** (default): Base configuration for JavaScript/TypeScript projects
+- **`@ssh/eslint-config`** (default): Base configuration for JavaScript projects
 - **`@ssh/eslint-config/typescript`**: Full configuration for Typescript
 - **`@ssh/eslint-config/react`**: Full configuration for React
 - **`@ssh/eslint-config/base`**: Alias for the default base configuration
-- **`@ssh/eslint-config/legacy`**: ESLint 8 compatibility (deprecated)
 
 ## Usage
 
@@ -117,19 +122,3 @@ export default [
   }
 ];
 ```
-
-### ESLint 8 (Legacy) - Deprecated
-
-⚠️ **Note**: ESLint 8 support is deprecated. Please upgrade to ESLint 9 for the best experience.
-
-Create an `.eslintrc.js` file:
-
-```javascript
-module.exports = {
-  extends: ['@ssh/eslint-config/legacy'],
-};
-```
-
-## License
-
-Apache-2.0 - See [LICENSE](LICENSE) file for details.

@@ -1,13 +1,7 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import { rules as baseBestPracticesRules } from '../../airbnb/best-practices.js';
-import { rules as baseErrorsRules } from '../../airbnb/errors.js';
 import { rules as baseES6Rules } from '../../airbnb/es6.js';
-import { rules as baseImportsRules } from '../../airbnb/imports.js';
-import { rules as baseStyleRules } from '../../airbnb/style.js';
-import { rules as baseVariablesRules } from '../../airbnb/variables.js';
 import typescriptEslint from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
-/* eslint-enable import/no-extraneous-dependencies */
 
 // Plugin configuration for flat config
 export const plugins = {

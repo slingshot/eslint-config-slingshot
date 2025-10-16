@@ -20,8 +20,7 @@
         "flat-config",
         "javascript",
         "typescript",
-        "react",
-        "airbnb"
+        "react"
     ],
     "peerDependencies": {
         "@stylistic/eslint-plugin": "^5.2.0",

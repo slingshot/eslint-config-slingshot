@@ -5,6 +5,9 @@ import stylisticPlugin from '@stylistic/eslint-plugin';
 import { rules as slingshotBaseRules } from './rules/slingshot/base.js';
 import { rules as airbnbBestPracticesRules } from './rules/airbnb/best-practices.js';
 import { rules as airbnbErrorsRules } from './rules/airbnb/errors.js';
+import { rules as airbnbES6Rules } from './rules/airbnb/es6.js';
+import { rules as airbnbNodeRules } from './rules/airbnb/node.js';
+import { rules as airbnbStrictRules } from './rules/airbnb/strict.js';
 import { rules as airbnbStyleRules } from './rules/airbnb/style.js';
 import { rules as airbnbVariablesRules } from './rules/airbnb/variables.js';
 import { rules as airbnbImportsRules } from './rules/airbnb/imports.js';
@@ -31,10 +34,13 @@ const base = [
             // Merge base rules from different sources
             ...airbnbBestPracticesRules,
             ...airbnbErrorsRules,
+            ...airbnbES6Rules,
+            ...airbnbNodeRules,
+            ...airbnbStrictRules,
             ...airbnbStyleRules,
             ...airbnbVariablesRules,
             ...airbnbImportsRules,
-            
+
             ...slingshotBaseRules,
 
             'import/extensions': ['error', 'ignorePackages', {

@@ -7,8 +7,6 @@ export const rules = {
     "@typescript-eslint/no-unused-vars": "off",
     "jsx-a11y/anchor-is-valid": "off",
     "@stylistic/lines-between-class-members": ["error", "always", { exceptAfterSingleLine: true }],
-    // Following rule is temporarily disabled due to a WebStorm bug
-    "import/no-extraneous-dependencies": "off",
 
     'no-unused-vars': 'off',
 };

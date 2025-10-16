@@ -1,5 +1,3 @@
-import globals from 'globals';
-
 export const rules = {
     // enforces no braces where they can be omitted
     // https://eslint.org/docs/rules/arrow-body-style
@@ -173,20 +171,5 @@ export const rules = {
     'yield-star-spacing': ['error', 'after'],
 };
 
-// Flat config format
-export default {
-    languageOptions: {
-        ecmaVersion: 2015, // equivalent to ecmaVersion: 6
-        sourceType: 'module',
-        globals: {
-            ...globals.es6,
-        },
-        parserOptions: {
-            ecmaFeatures: {
-                generators: false,
-                objectLiteralDuplicateProperties: false,
-            },
-        },
-    },
-    rules,
-};
+// Default export for backward compatibility
+export default { rules };

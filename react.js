@@ -40,6 +40,9 @@ const config = [
             'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.tsx'] }],
         },
         settings: {
+            react: {
+                version: 'detect',
+            },
             'import/resolver': {
                 node: {
                     extensions: ['.mjs', '.js', '.jsx', '.json', '.ts', '.tsx', '.d.ts'],

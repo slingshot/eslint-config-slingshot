@@ -202,7 +202,7 @@ export const rules = {
     'import/no-named-export': 'off',
 
     // Forbid a module from importing itself
-    // https://github.com/benmosher/eslint-plugin-import/blob/44a038c06software error038c06487964394b1e15b64f3bd34e5d40cde/docs/rules/no-self-import.md
+    // https://github.com/benmosher/eslint-plugin-import/blob/44a038c06487964394b1e15b64f3bd34e5d40cde/docs/rules/no-self-import.md
     'import/no-self-import': 'error',
 
     // Forbid cyclical dependencies between modules
