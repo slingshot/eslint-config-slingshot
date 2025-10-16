@@ -43,11 +43,5 @@
     },
     "dependencies": {
         "confusing-browser-globals": "^1.0.11"
-    },
-    "scripts": {
-        "test": "node test-all.mjs",
-        "test:legacy": "cd test-projects/legacy-eslint8 && pnpm install && pnpm run lint",
-        "test:react": "cd test-projects/react-eslint9 && pnpm install && pnpm run lint",
-        "test:js": "cd test-projects/js-eslint9 && pnpm install && pnpm run lint"
     }
 }
