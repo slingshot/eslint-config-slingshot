@@ -1,6 +1,6 @@
 {
     "name": "@ssh/eslint-config",
-    "version": "2.0.0",
+    "version": "2.0.3",
     "description": "Slingshot's ESLint configuration for JavaScript, TypeScript, and React projects with ESLint 9 flat config support",
     "type": "module",
     "exports": {
