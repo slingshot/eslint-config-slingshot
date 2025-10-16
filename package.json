@@ -1,10 +1,13 @@
 {
     "name": "@ssh/eslint-config",
-    "version": "1.0.0",
-    "description": "Slingshot's ESLint rules for JS, TS, and React",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+    "version": "2.0.3",
+    "description": "Slingshot's ESLint configuration for JavaScript, TypeScript, and React projects with ESLint 9 flat config support",
+    "type": "module",
+    "exports": {
+        ".": "./base.js",
+        "./base": "./base.js",
+        "./react": "./react.js",
+        "./typescript": "./typescript.js"
     },
     "repository": {
         "type": "git",
@@ -12,24 +15,29 @@
     },
     "keywords": [
         "eslint",
-        "eslintconfig",
+        "eslint-config",
+        "eslint9",
+        "flat-config",
         "javascript",
-        "typescript"
+        "typescript",
+        "react"
     ],
     "peerDependencies": {
-        "@typescript-eslint/eslint-plugin": "^5.13.0",
-        "@typescript-eslint/parser": "^5.0.0",
-        "eslint": "^7.32.0 || ^8.2.0",
-        "eslint-plugin-import": "^2.27.5",
-        "eslint-plugin-jsx-a11y": "^6.7.1",
-        "eslint-plugin-react": "^7.32.2",
-        "eslint-plugin-react-hooks": "^4.6.0"
+        "@stylistic/eslint-plugin": "^5.2.0",
+        "@typescript-eslint/eslint-plugin": "^8.41.0",
+        "@typescript-eslint/parser": "^8.41.0",
+        "eslint": "^9.34.0",
+        "eslint-plugin-import": "^2.29.0",
+        "eslint-plugin-jsx-a11y": "^6.10.0",
+        "eslint-plugin-react": "^7.37.0",
+        "eslint-plugin-react-hooks": "^7.0.0"
     },
     "author": "Sanil Chawla <sanil@slingshot.fm>",
     "license": "Apache-2.0",
     "devDependencies": {
-        "@types/confusing-browser-globals": "^1.0.0",
-        "@types/eslint": "^8.37.0"
+        "@types/confusing-browser-globals": "^1.0.3",
+        "@types/eslint": "^9.6.1",
+        "eslint-plugin-react-hooks": "^7.0.0"
     },
     "dependencies": {
         "confusing-browser-globals": "^1.0.11"
