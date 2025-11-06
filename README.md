@@ -42,19 +42,26 @@ pnpm add -D \
 
 ```bash
 pnpm add -D \
+  @stylistic/eslint-plugin@^5.2.0 \
   eslint-plugin-import@^2.29.0 \
   eslint-plugin-jsx-a11y@^6.10.0 \
   eslint-plugin-react@^7.37.0 \
   eslint-plugin-react-hooks@^7.0.0
 ```
 
+**Note**: The React configuration includes JSX formatting rules that enforce:
+- 4-space indentation for JSX elements and props
+- Double quotes in JSX attributes
+- Consistent bracket and tag spacing
+- Proper multiline JSX alignment
+
 ## Available Configurations
 
 This package provides three different configurations:
 
 - **`@ssh/eslint-config`** (default): Base configuration for JavaScript projects
-- **`@ssh/eslint-config/typescript`**: Full configuration for Typescript
-- **`@ssh/eslint-config/react`**: Full configuration for React
+- **`@ssh/eslint-config/typescript`**: Full configuration for TypeScript
+- **`@ssh/eslint-config/react`**: Full configuration for React with JSX formatting (4-space indentation, proper prop alignment, enforced JSX style rules)
 - **`@ssh/eslint-config/base`**: Alias for the default base configuration
 
 ## Usage
